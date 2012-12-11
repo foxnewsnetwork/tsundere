@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "tsundere"
-  s.version = ""
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Thomas Chen"]
@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.markdown",
     "Rakefile",
+    "VERSION",
     "lib/tsundere.rb",
     "lib/tsundere/array.rb",
     "lib/tsundere/class_methods.rb",
@@ -35,7 +36,8 @@ Gem::Specification.new do |s|
     "spec/spec_helper.rb",
     "spec/tsundere_spec.rb",
     "test/helper.rb",
-    "test/test_tsundere.rb"
+    "test/test_tsundere.rb",
+    "tsundere.gemspec"
   ]
   s.homepage = "http://github.com/foxnewsnetwork/tsundere"
   s.licenses = ["MIT"]

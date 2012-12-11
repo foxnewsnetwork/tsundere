@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "tsundere"
   gem.homepage = "http://github.com/foxnewsnetwork/tsundere"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{object buffer for graceful managment of permission}
+  gem.description = %Q{Any given object can implement the tsundere interface. Once implemented, a tsundere object will behave differently based upon who is calling it.}
   gem.email = "foxnewsnetwork@gmail.com"
   gem.authors = ["Thomas Chen"]
   # dependencies defined in Gemfile
@@ -32,13 +32,13 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rcov/rcovtask'
-Rcov::RcovTask.new do |test|
-  test.libs << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-  test.rcov_opts << '--exclude "gems/*"'
-end
+# require 'rcov/rcovtask'
+# Rcov::RcovTask.new do |test|
+#   test.libs << 'test'
+#   test.pattern = 'test/**/test_*.rb'
+#   test.verbose = true
+#   test.rcov_opts << '--exclude "gems/*"'
+# end
 
 task :default => :test
 

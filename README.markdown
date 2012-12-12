@@ -56,7 +56,7 @@ class SchoolGirl
 	include Tsundere
 	attr_tsundere :speak_with, :as => { :stranger => 1 }
 	attr_tsundere :watch_movie_with, :as => { :friend => 2 }
-	attr_tsundere :bathe_with, be_naughty_with :as => { :dark_flame_master => 3 }
+	attr_tsundere :bathe_with, :be_naughty_with :as => { :dark_flame_master => 3 }
 	def speak_with words
 		...
 	end

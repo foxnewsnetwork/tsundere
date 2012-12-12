@@ -39,14 +39,22 @@ class Array
 	def p_bisearch_internal s, f, target, right_flag, &eq
 
 		mid = (f + s)/ 2
-		return f if f == s
+    #small base case
+    if f == s
+      if target > f
+        return f+1
+      else
+        return f
+      end
+    end
 		return s if count < 2
 		result = yield target, self[mid]
 		return mid if 0 == result
 		if s + 1 == f 
 			if right_flag
-				return s if yield(target, self[s]) <= 0 # target == self[s] or target < self[s] 
-				return f 
+				return s if yield(target, self[s]) <= 0 # target == self[s] or target < self[s]
+				return f if yield(target,self[f]) <= 0
+        return f+1
 			else
 				return f if yield(target, self[f]) >= 0 # target == self[f] or target > self[f] 
 				return s 

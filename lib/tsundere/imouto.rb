@@ -21,7 +21,11 @@ module Tsundere
 		end # method_missing
 
 		def respond_to? meth
-			@parent.respond_to? meth
+			if @parent.dere_for? @level, meth 
+				@parent.respond_to? meth
+			else
+				false
+			end # if-dere
 		end # meth
 	end # imouto
 end # Tsundere

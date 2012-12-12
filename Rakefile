@@ -19,9 +19,8 @@ Jeweler::Tasks.new do |gem|
   gem.license = "MIT"
   gem.summary = %Q{object buffer for graceful management of permission}
   gem.description = %Q{Any given object can implement the tsundere interface. Once implemented, a tsundere object will behave differently based upon who is calling it.}
-  gem.email = "foxnewsnetwork@gmail.com"
+  gem.email = ["foxnewsnetwork@gmail.com","trevor.umeda@gmail.com"]
   gem.authors = ["Thomas Chen", "Trevor Umeda"]
-  gem.owners = ["foxnewsnetwork","froggyp"]
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new

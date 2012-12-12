@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors = ["Thomas Chen", "Trevor Umeda"]
   s.date = "2012-12-12"
   s.description = "Any given object can implement the tsundere interface. Once implemented, a tsundere object will behave differently based upon who is calling it."
-  s.email = "foxnewsnetwork@gmail.com"
+  s.email = ["foxnewsnetwork@gmail.com", "trevor.umeda@gmail.com"]
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.markdown"

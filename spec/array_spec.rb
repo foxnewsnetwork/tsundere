@@ -12,11 +12,11 @@ describe Array do
 			it "should have decent coverage #{n} lean left" do
 				@array.binary_search_raw(n, :left => true).should eq n
 			end # it
-			it "should given #{n-0.5} it should get index #{n}" do
+			it "should, given #{n-0.5}, get index #{n}" do
 				# debugger
 				@array.binary_search_raw(n - 0.5).should eq n
 			end # it
-			it "should given #{n+0.5} it should get index #{n}" do
+			it "should, given #{n+0.5}, get index #{n}, with left preference" do
 				# debugger
 				@array.binary_search_raw(n + 0.5, :left => true).should eq n
 			end # it

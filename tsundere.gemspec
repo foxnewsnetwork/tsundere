@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "tsundere"
-  s.version = "0.1.4"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Thomas Chen", "Trevor Umeda"]

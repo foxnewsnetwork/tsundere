@@ -43,17 +43,29 @@ describe Array do
 		end # it
 	end # bsr
 
-	describe "construction" do 
-		it "should construct an ordered array" do 
+	describe "construction" do
+   it "should construct an ordered array" do
 			@array = []
 			10.times do
 				val = rand(100)
 				ind = @array.binary_search_raw(val)
 				@array.insert(ind, val)
 			end # 10 times
-			
+
 			@array.count.should eq 10
 			@array.should eq @array.sort
-		end # it
+   end # it
+    it "should pass this random test" do
+       @array = []
+      val = 26
+      val2 = 9
+      ind = @array.binary_search_raw(val)
+      @array.insert(ind,val)
+      ind2 = @array.binary_search_raw(val2)
+
+      @array.insert(ind2,val2)
+      @array.should eq @array.sort
+
+    end
 	end # construction
 end # Array

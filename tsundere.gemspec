@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Thomas Chen"]
-  s.date = "2012-12-11"
+  s.authors = ["Thomas Chen", "Trevor Umeda"]
+  s.date = "2012-12-12"
   s.description = "Any given object can implement the tsundere interface. Once implemented, a tsundere object will behave differently based upon who is calling it."
   s.email = "foxnewsnetwork@gmail.com"
   s.extra_rdoc_files = [
@@ -18,6 +18,15 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
+    ".idea/.name",
+    ".idea/.rakeTasks",
+    ".idea/encodings.xml",
+    ".idea/misc.xml",
+    ".idea/modules.xml",
+    ".idea/scopes/scope_settings.xml",
+    ".idea/tsundere.iml",
+    ".idea/vcs.xml",
+    ".idea/workspace.xml",
     ".rspec",
     "Gemfile",
     "Gemfile.lock",
@@ -43,7 +52,7 @@ Gem::Specification.new do |s|
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.24"
-  s.summary = "object buffer for graceful managment of permission"
+  s.summary = "object buffer for graceful management of permission"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3

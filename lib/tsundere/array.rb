@@ -41,7 +41,7 @@ class Array
 		mid = (f + s)/ 2
     #small base case
     if f == s
-      if target > f
+      if yield( target , self[f]) > 0
         return f+1
       else
         return f

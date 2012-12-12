@@ -36,11 +36,6 @@ module Tsundere
 				perm.each do |key, lvl|
 					@rank_table[key] = lvl
 					
-					# FIXME: We really should not have to call sort here,
-					# but for some reason the tree isn't being constructed
-					# properly (i.e. the test won't pass), so I decided to
-					# just say "fuck it" and put in a sort sort
-					warn "FixMe: Take out this godawful sort from this insert by fixing the array extension and passing the array_spec"
 					ind = permission_table[type][:array].binary_search_raw([lvl, attributes]) { |a1, a2| a1.first <=> a2.first } 
 					permission_table[type][:array].insert(ind, [lvl, attributes]).sort! { |a1, a2| a1.first <=> a2.first } 
 				end # each perm

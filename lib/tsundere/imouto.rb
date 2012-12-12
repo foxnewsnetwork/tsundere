@@ -19,5 +19,9 @@ module Tsundere
 				super
 			end 
 		end # method_missing
+
+		def respond_to? meth
+			@parent.respond_to? meth
+		end # meth
 	end # imouto
 end # Tsundere

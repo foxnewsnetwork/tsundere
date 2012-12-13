@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "tsundere"
-  s.version = "0.1.5"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Thomas Chen", "Trevor Umeda"]
-  s.date = "2012-12-12"
+  s.date = "2012-12-13"
   s.description = "Any given object can implement the tsundere interface. Once implemented, a tsundere object will behave differently based upon who is calling it."
   s.email = ["foxnewsnetwork@gmail.com", "FroggyP@gmail.com"]
   s.extra_rdoc_files = [

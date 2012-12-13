@@ -3,6 +3,7 @@ module Tsundere
 
 	def tsundere_for(duck)
 		level = p_retrieve_level_or_rank duck
+
 		Imouto.new self, level 
 	end # tsundere_for
 
@@ -31,15 +32,17 @@ module Tsundere
 	private
 
 	def p_retrieve_level_or_rank duck
+		level = nil
 		case duck.class.to_s
 		when String.to_s, Fixnum.to_s, Float.to_s, Integer.to_s, Symbol.to_s
-			duck
+			level = duck
 		when Hash.to_s
-			duck[:level] if duck.has_key? :level
-			duck[:rank] if duck.has_key? :rank
+			level = duck[:level] if duck.has_key? :level
+			level = duck[:rank] if duck.has_key? :rank
 		else
-			duck.level if duck.respond_to? :level
-			duck.rank if duck.respond_to? :rank
+			level = duck.level if duck.respond_to? :level
+			level =	duck.rank if duck.respond_to? :rank
 		end # duck class
+		level
 	end # level or rank
 end # Tsundere

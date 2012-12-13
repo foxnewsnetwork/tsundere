@@ -8,6 +8,7 @@ module Tsundere
 		end # initialize
 
 		def method_missing meth, *args, &block
+			
 			conditions = []
 			conditions << lambda do
 				:[] == meth and @parent.dere_for? @level, process_args( *args )
@@ -33,6 +34,7 @@ module Tsundere
 						@parent.send(meth, *args) if block.nil?
 					end # meth
 				else
+
 					return @parent.tsun_for @level
 				end # if conditions inject
 			else

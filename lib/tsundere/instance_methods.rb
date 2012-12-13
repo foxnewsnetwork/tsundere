@@ -1,5 +1,6 @@
 # tsundere instance module
 module Tsundere
+
 	def tsundere_for(duck)
 		level = p_retrieve_level_or_rank duck
 		Imouto.new self, level 
@@ -22,7 +23,13 @@ module Tsundere
 		end # if-else
 	end # dere_for?
 
+	def tsun_for lvl
+		fail_msg = self.class.fail_table[lvl]
+		fail_msg ||= "Sorry #{lvl}, access is denied!"
+	end # tsun for
+
 	private
+
 	def p_retrieve_level_or_rank duck
 		case duck.class.to_s
 		when String.to_s, Fixnum.to_s, Float.to_s, Integer.to_s, Symbol.to_s

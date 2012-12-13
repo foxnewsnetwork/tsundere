@@ -2,7 +2,7 @@ require 'spec_helper'
 
 class SchoolGirl
 	include Tsundere
-	attr_tsundere :show_up, :as => { :user => 1 }
+	attr_tsundere :show_up, :fail => "you are a faggot", :as => { :user => 1 }
 	attr_tsundere :brush_teeth, :fanservice, :as => { :oniichan => 2 }
 
 	def show_up
@@ -59,7 +59,7 @@ describe SchoolGirl do
 			@tsukihi.tsundere_for(:oniichan)[:fanservice].should eq true
 		end # it
 		it "should not work for regular user" do 
-			@tsukihi.tsundere_for(:user)[:fanservice].should =~ /sorry/i
+			@tsukihi.tsundere_for(:user)[:fanservice].should =~ /faggot/i
 		end # it
 	end # []
 	

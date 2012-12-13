@@ -10,3 +10,9 @@ module Tsundere
 		base.extend ClassMethods
 	end # self.included
 end # Tsundere
+
+if defined? Rails and defined? ActiveSupport
+	ActiveSupport.on_load(:action_controller) do
+		include Tsundere
+	end # onload
+end # if

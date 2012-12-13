@@ -3,7 +3,7 @@ require 'spec_helper'
 class SchoolGirl
 	include Tsundere
 	attr_tsundere :show_up, :as => { :user => 1 }
-	attr_tsundere :brush_teeth, :as => { :oniichan => 2 }
+	attr_tsundere :brush_teeth, :fanservice, :as => { :oniichan => 2 }
 
 	def show_up
 		1
@@ -12,6 +12,15 @@ class SchoolGirl
 	def brush_teeth
 		2
 	end # brush
+
+	def []( k)
+		@internal[k]
+	end # getter
+
+	def []=( k, j)
+		@internal ||= {}
+		@internal[k] = j
+	end # setter
 end # StereotypicalLoli
 
 describe SchoolGirl do 
@@ -31,4 +40,27 @@ describe SchoolGirl do
 		@tsukihi.tsundere_for(:oniichan).should respond_to :brush_teeth
 		@tsukihi.tsundere_for(:oniichan).should respond_to :show_up
 	end # it
+	[:user, :oniichan].each do |character|
+		[:[], :[]=].each do |fun|
+			it "should have the getter" do 
+				@tsukihi.should respond_to fun
+			end # it
+			it "should have the getter" do 
+				@tsukihi.tsundere_for(character).should respond_to fun
+			end # it		
+		end # each fun
+	end # each character
+	describe "[]" do 
+		before :each do 
+			@tsukihi.tsundere_for(:oniichan)[:fanservice] = true
+		end # each
+		it "should only fanservice oniichan" do 
+			@tsukihi[:fanservice].should eq true
+			@tsukihi.tsundere_for(:oniichan)[:fanservice].should eq true
+		end # it
+		it "should not work for regular user" do 
+			@tsukihi.tsundere_for(:user)[:fanservice].should =~ /sorry/i
+		end # it
+	end # []
+	
 end # SchoolGirl

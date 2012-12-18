@@ -89,6 +89,60 @@ rikka.tsundere_for(person).speak_with person.words
 rikka.tsundere_for(person).watch_movie_with person, 
 ...
 ```
+Another Use Case
+=
+For when you are on rails, already have written your view partials,
+your helpers, but now suddenly need to mix in or update your permission
+system.
+
+```ruby
+# Original code
+
+# Your model
+class Invoice < ActiveRecord::Base
+	...
+end # Invoice
+
+# Some helper you have
+module PageHelper
+	def generate_tileview_hash invoice
+		output = {
+			:title => invoice.title ,
+			:content => invoice.text ,
+			...
+		}
+	end # generate_tile_hash
+end # PageHelper
+
+# Your view
+=render "shared/tileview", :tile => generate_tileview_hash(@invoice)
+```
+Everything is going fine, when suddenly on Friday afternoon:
+
+```ruby
+## Here, your boss says he needs a permission system so that
+# only level 3 (accounting) and up can see the sales prices
+# on any given invoice
+```
+
+If you're using cancan, authority, lots of conditions in your views,
+or what have you, you are screwed. You must now spend the weekend going
+through your views and modifying all the conditions, handle all the 
+new exceptions, etc. 
+
+But with Tsundere, things are easier (but it's not like I built this so
+things can be easier for you, baka!).
+
+```ruby
+# Your fixed model
+class Invoice < ActiveRecord::Base
+	attr_tsundere :price, :fail => "Access-denied", :as => { :acounting => 3 }
+end # Invoice
+
+# Your view
+=render "shared/tileview", :tile => generate_tileview_hash(@invoice.tsundere_for(current_user))
+```
+
 Install
 =
 ```
